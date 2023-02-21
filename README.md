@@ -72,9 +72,9 @@ Remove an entire stack configured in `serverless.yml` via CloudFormation.
 
 ### S3
 
-https://shop-react-redux-cloudfront-camarena.s3.amazonaws.com/
+https://my-store-camarena.s3.eu-west-1.amazonaws.com/
 
 ### Cloudfront
 
-https://d2np7ku5w21izc.cloudfront.net
+https://drup6usm21o4v.cloudfront.net/
 
