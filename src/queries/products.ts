@@ -21,7 +21,7 @@ export function useAvailableAWSProducts() {
     "available-aws-products",
     async () => {
       const res = await axios.get(
-        'https://ahklh6mkpd.execute-api.us-west-1.amazonaws.com/dev/product-list'
+        'https://ahklh6mkpd.execute-api.us-west-1.amazonaws.com/dev/products'
       );
       return res.data.results;
     }
