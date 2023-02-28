@@ -16,6 +16,21 @@ export function useAvailableProducts() {
   );
 }
 
+export function useAvailableAWSProducts() {
+  return useQuery(
+    "available-aws-products",
+    async () => {
+      const res = await axios.get(
+        'https://ahklh6mkpd.execute-api.us-west-1.amazonaws.com/dev/product-list'
+      );
+      console.log('app: res', res.data.results);
+      
+      return res.data.results;
+    }
+  );
+}
+
+
 export function useInvalidateAvailableProducts() {
   const queryClient = useQueryClient();
   return React.useCallback(
