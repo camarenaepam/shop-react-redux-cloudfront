@@ -2,7 +2,7 @@
   "name": "my-store-camarena",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
+   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview",

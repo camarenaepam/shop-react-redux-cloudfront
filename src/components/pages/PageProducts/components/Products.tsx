@@ -10,14 +10,19 @@ import { useAvailableAWSProducts, useAvailableProducts } from "~/queries/product
 
 export default function Products() {
   const { data: availableProducts  = [], isLoading } = useAvailableProducts();
-  const { data: productList = [], isProductListLoading } = useAvailableAWSProducts();
+  const { data: productList = [], isLoading: isProductListLoading } = useAvailableAWSProducts();
   if (isLoading || isProductListLoading) {
     return <Typography>Loading...</Typography>;
   }
-  console.log('app: availableProducts', availableProducts);
-  console.log('app: productList', productList);
 
-  const data = [... availableProducts, ...productList];
+  const productsWithStock = productList.results.Items.map((item:any) => {
+      return {
+        ...item,
+        count:  productList.stock.Items.find((stockItem: any) => stockItem.product_id === item.id)?.count || 0
+      }
+  });
+
+  const data = [...availableProducts, ...productsWithStock];
   
   return (
     <Grid container spacing={4}>
