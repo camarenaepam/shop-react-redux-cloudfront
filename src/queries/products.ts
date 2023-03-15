@@ -23,7 +23,7 @@ export function useAvailableAWSProducts() {
       const res = await axios.get(
         'https://ahklh6mkpd.execute-api.us-west-1.amazonaws.com/dev/products'
       );
-      return res.data.results;
+      return res.data;
     }
   );
 }
