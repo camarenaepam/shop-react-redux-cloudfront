@@ -6,11 +6,12 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
 export default function PageProductImport() {
+  const getUrl = (fileName:string) => `${API_PATHS.import}/import/${fileName}`;
   return (
     <Box py={3}>
       <Box mb={2} display="flex" justifyContent="space-between">
         <CSVFileImport
-          url={`${API_PATHS.import}/import`}
+          url={getUrl}
           title="Import Products CSV"
         />
         <Button
